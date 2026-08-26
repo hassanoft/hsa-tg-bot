@@ -152,6 +152,13 @@ export async function getConnectedProfilePicture(bot) {
 
 export const CATEGORY_KEYS = MENU_CATEGORIES.map((c) => c.key);
 
+// Telegram limite les légendes (caption) de photo à 1024 caractères, contre
+// 4096 pour un message texte classique. Le menu complet dépasse presque
+// toujours 1024 caractères : on ne peut donc pas le mettre en légende sans
+// risquer un rejet par l'API (c'était le bug : la photo passait, mais
+// l'envoi échouait dès que la légende dépassait la limite).
+const TELEGRAM_CAPTION_LIMIT = 1024;
+
 /** Utilisée par /help et /menu (doivent afficher exactement le même menu — règle 20). */
 export async function sendMenu(ctx, categoryArg) {
   let text;
@@ -167,9 +174,17 @@ export async function sendMenu(ctx, categoryArg) {
   }
 
   const photo = await getConnectedProfilePicture(ctx.bot);
-  if (photo) {
+  if (!photo) {
+    await ctx.reply(text);
+    return;
+  }
+
+  if (text.length <= TELEGRAM_CAPTION_LIMIT) {
+    // Assez court pour tenir en légende : un seul message photo+texte.
     await ctx.bot.sendMessage(ctx.chatId, { image: photo, caption: text }, { quoted: ctx.msg });
   } else {
+    // Trop long pour une légende : la photo part seule, suivie du menu en texte.
+    await ctx.bot.sendMessage(ctx.chatId, { image: photo }, { quoted: ctx.msg });
     await ctx.reply(text);
   }
 }
