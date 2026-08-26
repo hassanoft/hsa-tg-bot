@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Env
+.env
+
+# Données persistantes
+data/*.json
+!data/.gitkeep
+
+# Logs
+*.log
+logs/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temp media
+tmp/
+temp/
+*.tmp
+
+# Artefacts de test
+test/.tmp-*

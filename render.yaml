@@ -1,0 +1,47 @@
+services:
+  - type: web
+    name: hsa-tg-bot
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: BOT_NAME
+        value: "H$Λ BOT"
+      - key: PREFIX
+        value: "/"
+      - key: BOT_TOKEN
+        sync: false
+      - key: OWNER_ID
+        sync: false
+      - key: STATUS_CHANNEL_ID
+        sync: false
+      - key: PORT
+        value: 3000
+      - key: DATA_DIR
+        value: /var/data
+      - key: AI_API_KEY
+        sync: false
+      - key: AI_API_URL
+        value: https://api.openai.com/v1/chat/completions
+      - key: AI_MODEL
+        value: gpt-4o-mini
+      - key: RATE_LIMIT_MAX
+        value: 8
+      - key: RATE_LIMIT_WINDOW_MS
+        value: 10000
+    # IMPORTANT : le plan "free" de Render utilise un système de fichiers ÉPHÉMÈRE.
+    # La base JSON (/var/data) sera perdue à chaque redéploiement/restart si
+    # aucun disque persistant n'est attaché. Pour une vraie persistance,
+    # passez à un plan payant et décommentez le bloc "disk" ci-dessous (un
+    # Persistent Disk Render), en gardant DATA_DIR aligné sur le mountPath choisi.
+    # Notez que contrairement à la version WhatsApp, il n'y a pas de "session"
+    # à conserver ici : Telegram s'authentifie uniquement via BOT_TOKEN, qui
+    # reste valide indéfiniment tant qu'il n'est pas régénéré via @BotFather.
+    # disk:
+    #   name: hsa-tg-bot-data
+    #   mountPath: /var/data
+    #   sizeGB: 1
