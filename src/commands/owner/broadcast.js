@@ -54,11 +54,11 @@ export default {
       try {
         await ctx.bot.sendMessage(groupId, { text: `
 🚨 À VOTRE ATTENTION SVP🚨\n
-------------------------------------
- 👑 Propriétaire de H$Λ BOT : ${formatMention(config.ownerId, 'HASSAN SOUGUE')} à quelques choses à vous annoncer\n
-------------------------------------
+___________________________________________________
+ 👑 Propriétaire de H$Λ BOT ${formatMention(config.ownerId, 'HASSAN SOUGUE')} à quelques choses à vous annoncer\n
+___________________________________________________
 ${ctx.text}
-------------------------------------
+___________________________________________________
 H$Λ BOT
 `,
       parse_mode: 'HTML', });
