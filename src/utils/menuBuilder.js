@@ -77,11 +77,17 @@ export const MENU_CATEGORIES = [
       'love', 'rate', 'roast', 'truth', 'dare', 'character', 'guess',
     ],
   },
+{
+  key: 'sport',
+  title:'🏋🏻‍♀️ SPORT',
+  commands: ['football', 'basketball', 'tennis',
+ ],
+},
   {
     key: 'owner',
     title: '👑 OWNER',
     commands: [
-      'broadcast', 'ban', 'unban', 'block', 'unblock', 'addadmin', 'deladmin', 'listadmin',
+     'broadcast', 'ban', 'unban', 'block', 'unblock', 'addadmin', 'deladmin', 'listadmin',
       'setprefix', 'maintenance', 'eval', 'exec', 'restart', 'shutdown', 'backup', 'logs',
     ],
   },
