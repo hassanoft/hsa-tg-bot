@@ -62,6 +62,11 @@ export const config = {
     max: int(process.env.RATE_LIMIT_MAX, 8),
     windowMs: int(process.env.RATE_LIMIT_WINDOW_MS, 10000),
   },
+   forceJoin: {
+  enabled: true,
+  channel: '@ExtraArea_HackingEthical',
+  channelLink: 'https://t.me/ExtraArea_HackingEthical',
+  },
 };
 
 /** OWNER est toujours un utilisateur Telegram distinct du bot (pas de notion de "self-bot" comme sur WhatsApp). */
