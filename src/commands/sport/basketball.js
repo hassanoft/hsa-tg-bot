@@ -6,5 +6,7 @@ export default {
   category: 'sport',
   description: 'pas de description actuellement...',
 
-  const Message = 'Ya rien à voir actuellement'
+  async execute {
+  await ctx.reply (`Pas encore prêt`
+  },
 };
