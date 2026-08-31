@@ -1,4 +1,4 @@
-import { } from '../../utils/helper.js';
+import { randomChoice } from '../../utils/helpers.js';
 
 export default {
   name: 'basketball',
