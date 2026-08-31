@@ -1,12 +1,13 @@
-import { randomInt } from '../../utils/helpers.js';
-
 export default {
   name: 'basketball',
   aliases: [],
   category: 'sport',
-  description: "Calcule un pourcentage d'amour aléatoire et amusant.",
-
+  description: 'Informations et actualités sur le basketball.',
   async execute(ctx) {
-    await ctx.reply(`Commande en cours de développement...`);
+    await ctx.reply(
+      `🏀 BASKETBALL\n\n` +
+      `🚧 Cette commande est actuellement en cours de développement.\n\n` +
+      `⏳ Merci de patienter, elle sera bientôt disponible !`
+    );
   },
 };
