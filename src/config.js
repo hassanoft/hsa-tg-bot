@@ -22,8 +22,8 @@ export const config = {
 
   ai: {
     apiKey: process.env.AI_API_KEY || '',
-    apiUrl: process.env.AI_API_URL || 'https://api.openai.com/v1/chat/completions',
-    model: process.env.AI_MODEL || 'gpt-4o-mini',
+    apiUrl: process.env.AI_API_URL || 'https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent',
+    model: process.env.AI_MODEL || '',
     imageApiUrl: process.env.AI_IMAGE_API_URL || 'https://api.openai.com/v1/images/generations',
     imageModel: process.env.AI_IMAGE_MODEL || 'dall-e-3',
     ttsApiUrl: process.env.TTS_API_URL || '',
