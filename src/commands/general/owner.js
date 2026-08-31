@@ -12,7 +12,10 @@ export default {
       return;
     }
     await ctx.bot.sendMessage(ctx.chatId, {
-      text: `👑 Propriétaire de H$Λ BOT : ${formatMention(config.ownerId, 'Contacter le propriétaire')}`,
+      text: `👑 Propriétaire de H$Λ BOT : ${formatMention(config.ownerId, 'Contacter le propriétaire')}\n\n
+• Prénom: HASSAN\n
+• Nom: SOUGUE\n
+• Date de naissance : 05/08/2008`,
       parse_mode: 'HTML',
     });
   },
