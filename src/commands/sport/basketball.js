@@ -1,12 +1,12 @@
-import { randomChoice } from '../../utils/helpers.js';
+import { randomInt } from '../../utils/helpers.js';
 
 export default {
   name: 'basketball',
   aliases: [],
   category: 'sport',
-  description: 'pas de description actuellement...',
+  description: "Calcule un pourcentage d'amour aléatoire et amusant.",
 
-  async execute {
-  await ctx.reply (`Pas encore prêt`
+  async execute(ctx) {
+    await ctx.reply(`Commande en cours de développement...`);
   },
 };
