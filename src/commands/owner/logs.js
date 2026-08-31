@@ -12,6 +12,6 @@ export default {
       await ctx.reply('ℹ️ Aucun log disponible pour le moment.');
       return;
     }
-    await ctx.reply(`📜 Derniers logs :\n\`\`\`${lines.join('\n').slice(-3500)}\`\`\``);
+    await ctx.reply(`📜 Derniers logs :\n\`\`\`${lines.join('\n').slice(-5500)}\`\`\``);
   },
 };
