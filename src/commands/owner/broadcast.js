@@ -50,7 +50,10 @@ export default {
     for (const groupId of groupIds) {
       if (cancelRequested) break;
       try {
-        await ctx.bot.sendMessage(groupId, { text: `📢 ${ctx.text}` });
+        await ctx.bot.sendMessage(groupId, { text: `
+🚨 À VOTRE ATTENTION SVP🚨\n
+
+${ctx.text}` });
         sent += 1;
       } catch (err) {
         failed += 1;
