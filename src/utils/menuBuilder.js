@@ -12,7 +12,7 @@ export const MENU_CATEGORIES = [
   {
     key: 'general',
     title: '🏠 GENERAL',
-    commands: ['start', 'help', 'menu', 'ping', 'alive', 'runtime', 'botinfo', 'owner', 'stats', 'speed', 'report', ''creator', 'contact'],
+    commands: ['start', 'help', 'menu', 'ping', 'alive', 'runtime', 'botinfo', 'owner', 'stats', 'speed', 'report', ', 'contact'],
   },
   {
     key: 'ai',
