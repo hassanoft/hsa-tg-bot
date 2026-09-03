@@ -12,7 +12,7 @@ export const MENU_CATEGORIES = [
   {
     key: 'general',
     title: '🏠 GENERAL',
-    commands: ['start', 'help', 'menu', 'ping', 'alive', 'runtime', 'botinfo', 'owner', 'stats', 'speed', 'report', 'contact'],
+    commands: ['help', 'menu', 'ping', 'alive', 'runtime', 'botinfo', 'owner', 'stats', 'speed', 'report', 'contact'],
   },
   {
     key: 'ai',
@@ -75,19 +75,19 @@ export const MENU_CATEGORIES = [
     commands: [
       '8ball', 'dice', 'coin', 'quiz', 'trivia', 'riddle', 'joke', 'meme', 'ship',
       'love', 'rate', 'roast', 'truth', 'dare', 'character', 'guess',
+      'guessnumber', 'dart', 'bowling', 'slot',
     ],
   },
-{
-  key: 'sport',
-  title:'🏋🏻‍♀️ SPORT',
-  commands: ['football', 'basketball', 'tennis',
- ],
-},
+  {
+    key: 'sport',
+    title: '⚽ SPORT',
+    commands: ['football', 'basketball', 'tennis', 'running', 'fitness'],
+  },
   {
     key: 'owner',
     title: '👑 OWNER',
     commands: [
-     'broadcast', 'ban', 'unban', 'block', 'unblock', 'addadmin', 'deladmin', 'listadmin',
+      'broadcast', 'ban', 'unban', 'block', 'unblock', 'addadmin', 'deladmin', 'listadmin',
       'setprefix', 'maintenance', 'eval', 'exec', 'restart', 'shutdown', 'backup', 'logs',
     ],
   },
