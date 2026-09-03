@@ -10,20 +10,36 @@ export default {
   description: 'Démarre H$Λ BOT.',
 
   async execute(ctx) {
-    const subscription = await checkForceJoin(
-      ctx.bot,
-      ctx.senderId
-    );
-
-    if (!subscription.joined) {
-      await ctx.reply(forceJoinMessage());
-      return;
-    }
-
     await ctx.reply(
-      `👋 Bienvenue ${ctx.pushName} !\n\n` +
-      `✅ Accès autorisé.\n\n` +
-      `Utilise ${ctx.prefix}help pour afficher les commandes.`
+      `🌐 VOTRE ENTREPRISE A-T-ELLE SON PROPRE SITE WEB ?
+
+Aujourd’hui, beaucoup de clients recherchent une entreprise sur Internet avant de la contacter.
+
+Je crée des sites web modernes, professionnels et adaptés aux téléphones pour :
+
+🏪 Boutiques
+🍔 Restaurants
+💈 Coiffeurs / salons
+📱 Entrepreneurs
+🧑‍💻 Freelances
+🏢 Petites entreprises
+🎓 Associations et projets
+
+✅ Design moderne
+✅ Compatible téléphone
+✅ Présentation de vos services
+✅ Bouton WhatsApp
+✅ Formulaire de contact
+✅ Mise en ligne
+
+💰 Création à partir de 15 000 FCFA
+
+🔥 Offre spéciale pour mes premiers clients.
+
+📩 Écris-moi « SITE »\n
+https://wa.me/2250500525480
+
+HSA Web Studio — Donnez une présence professionnelle à votre activité sur Internet.`
     );
   },
 };
