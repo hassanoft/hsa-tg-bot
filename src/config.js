@@ -22,8 +22,8 @@ export const config = {
 
   ai: {
     apiKey: process.env.AI_API_KEY || '',
-    apiUrl: process.env.AI_API_URL || 'https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent',
-    model: process.env.AI_MODEL || '',
+    apiUrl: process.env.AI_API_URL || 'https://api.openai.com/v1/chat/completions',
+    model: process.env.AI_MODEL || 'gpt-4o-mini',
     imageApiUrl: process.env.AI_IMAGE_API_URL || 'https://api.openai.com/v1/images/generations',
     imageModel: process.env.AI_IMAGE_MODEL || 'dall-e-3',
     ttsApiUrl: process.env.TTS_API_URL || '',
@@ -38,8 +38,12 @@ export const config = {
   },
 
   download: {
-    apiUrl: process.env.DOWNLOAD_API_URL || '',
-    apiKey: process.env.DOWNLOAD_API_KEY || '',
+    // Aucune clé API externe : téléchargement via yt-dlp (YouTube/TikTok/
+    // Instagram/Facebook/Twitter) ou scraping HTTP direct (MediaFire/Drive).
+    ytDlpPath: process.env.YTDLP_PATH || 'yt-dlp',
+    maxSizeMb: int(process.env.DOWNLOAD_MAX_MB, 50),
+    timeoutMs: int(process.env.DOWNLOAD_TIMEOUT_MS, 60_000),
+    maxConcurrentPerUser: int(process.env.MAX_CONCURRENT_DOWNLOADS_PER_USER, 1),
   },
 
   weather: {
@@ -58,14 +62,17 @@ export const config = {
 
   ffmpegPath: process.env.FFMPEG_PATH || '',
 
+  http: {
+    userAgent:
+      process.env.HTTP_USER_AGENT ||
+      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36',
+    timeoutMs: int(process.env.HTTP_TIMEOUT_MS, 15_000),
+    retries: int(process.env.HTTP_RETRIES, 2),
+  },
+
   rateLimit: {
     max: int(process.env.RATE_LIMIT_MAX, 8),
     windowMs: int(process.env.RATE_LIMIT_WINDOW_MS, 10000),
-  },
-   forceJoin: {
-  enabled: true,
-  channel: '@ExtraArea_HackingEthical',
-  channelLink: 'https://t.me/ExtraArea_HackingEthical',
   },
 };
 
